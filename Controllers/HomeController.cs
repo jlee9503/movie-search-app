@@ -15,6 +15,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        // using (var client = new HttpClient())
+        // {
+        //     client.BaseAddress = new Uri("http://www.omdbapi.com/?s=" + "&apikey=3f66eca5");
+        //     //HTTP GET
+        //     var responseTask = client.GetAsync("student");
+        //     responseTask.Wait();
+
+        //     var result = responseTask.Result;
+            
+        // }
         return View();
     }
 
@@ -28,4 +38,6 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+
 }

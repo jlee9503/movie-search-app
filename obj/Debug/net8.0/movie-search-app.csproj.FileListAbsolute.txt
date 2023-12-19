@@ -28,3 +28,4 @@
 /Users/junglee/Desktop/movie-search-app/obj/Debug/net8.0/movie-search-app.pdb
 /Users/junglee/Desktop/movie-search-app/obj/Debug/net8.0/movie-search-app.genruntimeconfig.cache
 /Users/junglee/Desktop/movie-search-app/obj/Debug/net8.0/ref/movie-search-app.dll
+/Users/junglee/Desktop/movie-search-app/obj/Debug/net8.0/movie-search-app.sourcelink.json

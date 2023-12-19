@@ -1,29 +1,29 @@
-﻿const { createApp, ref } = Vue;
+﻿import { createApp, ref, computed } from "vue";
 
 createApp({
   setup() {
-    const movieData = ref(["data 1, data 2, data 3"]);
     const title = ref("");
-    const id = ref("");
-    const posterUrl = ref("")
+    const moviedata = ref([]);
 
-    const searchMoive = async () => {
-      console.log(title.value)
-
-      const response = await fetch('http://www.omdbapi.com/?s=' + title.value + '&apikey=3f66eca5')
+    const searchMovie = async () => {
+      const response = await fetch(
+        "http://www.omdbapi.com/?s=" + title.value + "&apikey=3f66eca5"
+      );
       const result = await response.json();
-      console.log(result)
-      result = data.value;
-
+      moviedata.value = result.Search;
+      console.log(moviedata.value);
     }
 
+    const moviesPerPage = computed(() => {
+      return moviedata.value.slice(
+        (page_number - 1) * page_size,
+        page_number * page_size
+      );
+    });
     return {
-      movieData,
       title,
-      id,
-      posterUrl,
-      searchMoive
+      moviedata,
+      searchMovie,
     };
-
   },
 }).mount("#home");
